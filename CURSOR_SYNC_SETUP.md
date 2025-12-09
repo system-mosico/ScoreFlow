@@ -15,22 +15,24 @@
    - プロジェクトフォルダ（`/Users/kajiurahisui/Desktop/ScoreFlow`）を開く
 
 2. **アカウントでログイン**
-   - Cursorの設定（`Cmd + ,` または `Ctrl + ,`）を開く
-   - 「Account」セクションでCursorアカウントにログイン
-   - ログインしていない場合は、アカウントを作成
+   - 左下隅の**プロフィールアイコン**（人型のアイコン）をクリック
+   - ログインしていない場合は、「Sign In」をクリックしてCursorアカウントにログイン
+   - アカウントを持っていない場合は、アカウントを作成
 
 3. **クラウド同期を有効化**
-   - 設定画面で「Cloud Sync」または「Settings Sync」を検索
-   - 「Enable Cloud Sync」を有効化
-   - 以下の項目を同期対象に設定：
-     - ✅ Workspace Settings（ワークスペース設定）
-     - ✅ Chat History（チャット履歴）
-     - ✅ Editor Settings（エディタ設定）
+   - 左下隅の**プロフィールアイコン**をクリック
+   - 表示されるメニューから**「設定同期をオンにする」**（または「Turn on Settings Sync」）を選択
+   - 同期する項目を選択：
+     - ✅ Settings（設定）
+     - ✅ Keybindings（キーボードショートカット）
+     - ✅ User Snippets（ユーザースニペット）
+     - ✅ Extensions（拡張機能）
+     - ✅ UI State（UI状態）
+   - 「適用」または「Apply」をクリックして設定を保存
 
-4. **ワークスペースを保存**
-   - `Cmd + Shift + P`（Mac）または `Ctrl + Shift + P`（Windows）でコマンドパレットを開く
-   - 「Cursor: Save Workspace to Cloud」を実行
-   - または、設定ファイル（`.cursor/settings.json`）が自動的に認識される
+4. **確認**
+   - プロフィールアイコンを再度クリック
+   - 「Settings Sync: On」と表示されていれば有効化されています
 
 ### 2. スマホ版Cursorでの設定
 
@@ -38,18 +40,19 @@
    - スマホにCursorアプリをインストール（未インストールの場合）
 
 2. **同じアカウントでログイン**
-   - PC版と同じCursorアカウントでログイン
+   - アプリを開いたら、PC版と同じCursorアカウントでログイン
+   - プロフィールアイコンから「Sign In」を選択
 
 3. **クラウド同期を有効化**
-   - 設定画面で「Cloud Sync」を有効化
+   - プロフィールアイコンをタップ
+   - 「設定同期をオンにする」を選択
+   - PC版と同じ設定項目を選択して「適用」
 
-4. **ワークスペースを開く**
-   - 「Open Workspace from Cloud」を選択
-   - 「ScoreFlow」ワークスペースを選択
-   - または、GitHubからクローン：
-     ```bash
-     git clone https://github.com/system-mosico/ScoreFlow.git
-     ```
+4. **プロジェクトを開く**
+   - GitHubからクローンするか、クラウドストレージ（iCloud Drive、Google Driveなど）からプロジェクトフォルダを開く
+   - または、GitHubリポジトリを直接開く：
+     - 「Open Repository」を選択
+     - `https://github.com/system-mosico/ScoreFlow.git` を入力
 
 ### 3. 同期される内容
 
@@ -75,16 +78,38 @@
 
 ## トラブルシューティング
 
+### プロフィールアイコンが見つからない場合
+
+- Cursorの左下隅を確認してください
+- ログインしていない場合は、まずアカウントにログインする必要があります
+- メニューバーから「Cursor」→「Account」→「Sign In」でもログインできます
+
+### 「設定同期をオンにする」オプションが表示されない場合
+
+1. **Cursorのバージョンを確認**
+   - メニューバーから「Cursor」→「About Cursor」でバージョンを確認
+   - 最新バージョンでない場合は、[公式サイト](https://cursor.com)から最新版をダウンロード
+
+2. **アカウントの確認**
+   - プロフィールアイコンをクリックして、ログイン状態を確認
+   - ログインしていない場合は、まずログインしてください
+
+3. **再起動**
+   - Cursorを完全に終了してから再度起動
+
 ### 同期が動作しない場合
 
 1. **アカウントの確認**
    - PC版とスマホ版で同じアカウントにログインしているか確認
+   - プロフィールアイコンをクリックして、アカウント情報を確認
 
 2. **クラウド同期の再有効化**
-   - 設定画面で一度無効化してから再度有効化
+   - プロフィールアイコン → 「設定同期をオフにする」
+   - 再度「設定同期をオンにする」を選択
 
 3. **手動同期**
-   - `Cmd + Shift + P` → 「Cursor: Sync Now」を実行
+   - `Cmd + Shift + P`（Mac）または `Ctrl + Shift + P`（Windows）でコマンドパレットを開く
+   - 「Sync: Turn on Settings Sync」または「Sync: Sync Now」を実行
 
 ### チャット履歴が表示されない場合
 
