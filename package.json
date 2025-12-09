@@ -8,7 +8,7 @@
     "build:export": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build && rm -rf public && mkdir -p public && cp .next/server/app/index.html public/index.html && mkdir -p public/_next/static && cp -r .next/static/* public/_next/static/ && cp -r node_modules/pdfjs-dist/build/pdf.worker.min.mjs public/pdf.worker.min.js || true",
+    "predeploy": "rm -rf public/_next && npm run build && rm -rf public && mkdir -p public && cp .next/server/app/index.html public/index.html && mkdir -p public/create && cp .next/server/app/index.html public/create/index.html && mkdir -p public/_next/static && cp -r .next/static/* public/_next/static/ && cp -r node_modules/pdfjs-dist/build/pdf.worker.min.mjs public/pdf.worker.min.js || true",
     "deploy": "npm run predeploy && firebase deploy",
     "deploy:hosting": "npm run predeploy && firebase deploy --only hosting",
     "deploy:firestore": "firebase deploy --only firestore:rules"
