@@ -1,0 +1,13 @@
+{
+  "cloudSync": {
+    "enabled": true,
+    "syncWorkspace": true,
+    "syncChatHistory": true,
+    "syncSettings": true
+  },
+  "workspace": {
+    "name": "ScoreFlow",
+    "description": "大会進行状況をリアルタイムで発信するWeb SaaS"
+  }
+}
+

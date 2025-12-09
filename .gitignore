@@ -46,6 +46,10 @@ ui-debug.log
 /public/_next/
 /public/index.html
 
+# Cursor settings (keep settings.json, ignore cache)
+.cursor/cache/
+.cursor/logs/
+
 
 
 
