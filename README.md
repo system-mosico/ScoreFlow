@@ -120,9 +120,23 @@ firebase init hosting
 
 4. ビルドとデプロイ
 ```bash
+npm run deploy:hosting
+```
+
+または個別に実行：
+```bash
 npm run build
 firebase deploy --only hosting
 ```
+
+### デプロイURL
+
+- 本番環境: https://scoreflow-85a3e.web.app
+
+## GitHubリポジトリ
+
+- リポジトリURL: https://github.com/system-mosico/ScoreFlow.git
+- ブランチ: main
 
 ## 注意事項
 
