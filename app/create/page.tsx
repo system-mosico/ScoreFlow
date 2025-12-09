@@ -2,7 +2,6 @@ import { CreateTournamentClient } from "./CreateTournamentClient";
 
 // 動的レンダリングを強制（Firebase Authを使用するため）
 export const dynamic = 'force-dynamic';
-export const runtime = 'nodejs';
 
 export default function CreateTournamentPage() {
   return <CreateTournamentClient />;
