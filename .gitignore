@@ -35,6 +35,17 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# build outputs
+/public/_next/
+/public/index.html
+
 
 
 
