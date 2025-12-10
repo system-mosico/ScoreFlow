@@ -145,3 +145,40 @@ firebase deploy --only hosting
 - 画像は圧縮（品質0.85）して保存
 - データは2ヶ月後に自動削除（TTL機能）
 
+## 既知の問題
+
+### `/create`ページのエラー（未解決）
+
+本番環境（https://scoreflow-85a3e.web.app/create）で以下のエラーが発生しています：
+
+**エラー内容:**
+```
+Uncaught ChunkLoadError: Loading chunk 974 failed.
+(missing: https://scoreflow-85a3e.web.app/_next/static/chunks/app/create/page-b0c8edde5a0c4a79.js)
+```
+
+または
+
+```
+l[e] is not a function
+```
+
+**発生状況:**
+- `/create`ページに直接アクセスした際、新規作成画面（大会名の入力欄、PDFのアップロード欄など）が表示されず、ホームページと同じUIが表示される
+- ブラウザのコンソールに上記のエラーが表示される
+- webpackのチャンクローダーがチャンクID `323`（または`974`）を読み込もうとしているが、webpackのチャンクマッピングに正しく登録されていない
+
+**影響範囲:**
+- 本番環境のみ（ローカル環境では正常に動作）
+- `/create`ページへの直接アクセス
+- ホームページから「新規作成」ボタンで遷移した場合も同様のエラーが発生する可能性
+
+**試行した対応:**
+- `scripts/prepare-deploy.js`でwebpackのチャンクマッピングを手動で追加
+- `/create/index.html`の生成とルーティングデータの修正
+- Firebase Hostingのリライトルールの調整
+
+**現状:**
+- エラーは継続して発生している
+- 根本的な解決には至っていない
+
